@@ -4,16 +4,16 @@ import IconFeather from "react-native-vector-icons/Feather";
 import IconEntypo from "react-native-vector-icons/Entypo";
 import { theme } from "../../ configs/colors.config";
 
-export default function Actions() {
+export default function Actions({ onActionClick }) {
   return (
     <View style={style.container}>
-      <Button style={style.btnCtn} borderRadius="50%" variant="ghost">
+      <Button onPress={() => onActionClick("Home")} style={style.btnCtn} borderRadius="50%" variant="ghost">
         <IconFeather name="home" size={24} color="danger.400" />
       </Button>
       <Button style={style.btnCtn} borderRadius="50%" variant="ghost">
         <IconEntypo name="list" size={24} color="emerald.700" />
       </Button>
-      <Button borderRadius="50%" style={style.addBtnCtn}>
+      <Button onPress={() => onActionClick("CreateCategory")} borderRadius="50%" style={style.addBtnCtn}>
         <AddIcon size="5" mt="0.5" color="white" />
       </Button>
       <Button style={style.btnCtn} borderRadius="50%" variant="ghost">
